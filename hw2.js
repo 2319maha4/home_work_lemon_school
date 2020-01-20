@@ -1,6 +1,6 @@
 "use strict";
 
-// 0, Составить расписание на неделю. 
+// 0, Составить расписание на неделю.      правильно через switch 
 // Пользователь вводит порядковый номер дня недели и у него на экране отображается, те, что запланировано на этот день.
 let dayOfWeek = prompt("", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday");
 let timeSchedule = (dayOfWeek === "Monday") ? "\n8:00 work \n13:00 coffee break \n20:00 stidying \n" :
@@ -12,7 +12,7 @@ let timeSchedule = (dayOfWeek === "Monday") ? "\n8:00 work \n13:00 coffee break 
   (dayOfWeek === "Sunday") ? "family day" : "you don\'t choose a day";
 alert(timeSchedule);
 
-// 1
+// 1   перевести строки в числа 
 // Написать программу, вычисляющую стоимость 10 минутного междугороднего разговора в зависимости от кода города. 
 let cityAreaPhoneCode = prompt();
 switch (cityAreaPhoneCode) {
@@ -197,9 +197,10 @@ for (let i = 1; i <= 3; i++) {
 // и выдаёт сумму всех нечетных чисел в этом диапазоне.
 let someNumberStart = +prompt();
 let someNumberEnd = +prompt();
-for (; someNumberStart <= someNumberEnd; someNumberStart++) {
+for (let sum = 0; someNumberStart <= someNumberEnd; someNumberStart++) {
   if (someNumberStart % 2 === 0) {
-    console.log(someNumberStart);
+sum += someNumberStart;
+    console.log(sum);
   }
 }
 
