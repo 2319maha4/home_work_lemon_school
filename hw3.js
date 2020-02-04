@@ -41,11 +41,6 @@ function showMessage() {
 }
 showMessage();
 
-// Суммы всех нечетных чисел в передаваемом числе
-// Нахождение наибольшего четного числа в передаваемом числе
-// Нахождения последнего нечетного числа в передаваемом числе
-
-
 // Наибольшее из трех переданных чисел
 function findBiggestNumber(NumberA, NumberB, NumberC) {
     if (NumberA > NumberB && NumberA > NumberC) {

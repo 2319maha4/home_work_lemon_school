@@ -82,6 +82,14 @@ let catheutusM = 4;
 let hypotenuseK = Math.sqrt((catheutusN ** 2) + (catheutusM ** 2))
 console.log(hypotenuseK);
 
+// Найди двенадцатый элемент Fibonacci
+function getFibonacciNum(n) {
+  return n <= 1 ? n : getFibonacciNum(n - 1) + getFibonacciNum(n - 2);
+}
+getFibonacciNum(5);
+const fibonacci = [0, 1, 1, 2, 3, 5, 8, 13, 21, 34];
+
+
 // Найти переплату по кредиту
 let mortgageServices = 2000000;
 let mortgageServicesPercent = 0.1;

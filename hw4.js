@@ -1,10 +1,14 @@
+"use strict";
+// НЕ БЫЛО ПРОВЕРЕНО с 54 строки
+// НЕ РАБОТАЕТ NaN - строка 169, неправильный синтаксис?
+
 //Клонирование массива. Напишите функцию copyArr(arr), которая копирует массив не изменяя иригинал.
-function isFruit() {
+function showFruit() {
     let fruits = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
-    let myBestFruits = fruits.slice(0, 5);
-    console.log(myBestFruits);
+    let showMyBestFruits = fruits.slice(0, 5);
+    console.log(showMyBestFruits);
 }
-isFruit();
+showFruit();
 
 //Преобразование массива в строку. Напишите код, который преобразовывает и объединяет все элементы массива в одно строковое значение. 
 // Элементы массива будут разделены запятой. Получите результат двумя разными методами.
@@ -48,27 +52,29 @@ function fillArrayD() {
 }
 fillArrayD();
 
+// НЕ БЫЛО ПРОВЕРЕНО
+
 //Заполните массив 10-ю случайными числами от 1 до 10 с помощью цикла. 
-function fillArrayC() {
-    let arrC = [];
+function fillArray() {
+    let arr = [];
     for (let someNumber = 0; someNumber < 10; someNumber++) {
-        arrC.push(Math.round(Math.random() * 10));
+        arr.push(Math.round(Math.random() * 10));
     }
-    return arrC;
+    return arr;
 }
-fillArrayC();
+fillArray();
 
 //Дан массив с числами. С помощью цикла выведите только те элементы массива, которые больше нуля и меньше 10-ти. 
 function getFilter() {
     let numbers = [1, 2, 4, -1, -3, 8, 7, 0, -5, 18, 12];
-    let num1 = numbers.filter(number => number > 0 && number < 10);
-    return num1;
+    let filtredNumbers = numbers.filter(number => number > 0 && number < 10);
+    return filtredNumbers;
 }
 getFilter();
 
 //Дан массив с числами. С помощью цикла проверьте, что в нем есть элемент со значением 5
 //Как только будет найден первый такой элемент - выведите 'Есть' и оборвите цикл. Если такого элемента нет - ничего не выводите.
-function getSomeElement() {
+function checkArray() {
     let arrElements = [1, 2, 3, 4, 5, 6, 7, 8, 9];
     for (let numSomeElement = 0; numSomeElement < arrElements.length; numSomeElement++) {
         if (arrElements[numSomeElement] === 5) {
@@ -78,7 +84,7 @@ function getSomeElement() {
     }
     return alert;
 }
-getSomeElement();
+checkArray();
 
 //Дан массив с числами. С помощью цикла найдите сумму элементов этого массива.
 function getSumArraysElement() {
@@ -114,23 +120,6 @@ function getArithmeticMean() {
 }
 getArithmeticMean();
 
-//Пользователь вводит многозначное число через promt. Напишите функцию colonOdd(num), 
-// которая принимает число num в качестве аргумента и вставляет двоеточие (:) между двумя нечетными числами. 
-// НЕ РАБОТАЕТ
-function colonOdd() {
-    const num = prompt();
-    let result = [num[0]];
-    for (let i = 1; i < num.length; i++) {
-        if ((num[i - 1] % 2 !== 0) && (num[i] % 2 !== 0)) {
-            result.push(':', num[i]);
-        } else {
-            result.push(num[i]);
-        }
-    }
-    return result.join('');
-}
-colonOdd();
-
 //Напишите функцию getFirst(array, n), которая возвращает фрагмент массива, содержащий первые 'n' элементов массива.
 function getFirst(array, n) {
     let firstArr = [23, 245, 6876, 32, 68, 3, 5, 90];
@@ -140,43 +129,17 @@ function getFirst(array, n) {
 getFirst();
 
 //Сумма элементов двух массивов 
-// НЕ РАБОТАЕТ
 function getSumOfTwoArrays() {
     let arr1 = [2, 4, 6, 87, 9];
     let arr2 = [3, 6, 9, 12];
     let arr3 = arr1.concat(arr2);
     let sumArraysElement = 0;
-    for (let numInThisFunction = 0, numInThisFunction < arr3.length; numInThisFunction++) {
+    for (let numInThisFunction = 0; numInThisFunction < arr3.length; numInThisFunction++) {
         sumArraysElement += arr3[numInThisFunction];
     }
     return sumArraysElement;
 }
 getSumOfTwoArrays();
-
-//Напишите код, который создаёт массив элементов представляющих собой сумму соответствующих элементов заданных массивов.
-// НЕ РАБОТАЕТ
-function getNewArrFromArraysElementsSum() {
-    let arrNum1 = [1, 2, 3, 4, 5];
-    let arrNum2 = [4, 5, 6];
-    let arrNum3 = [];
-    if (arrNum1.length > arrNum2.length) {
-        let count = arrNum1.length;
-    } else {
-        let count = arrNum2.length;
-    }
-    for (let i = 0; i < count; i++) {
-        if (arrNum2[i] === undefined) {
-            arrNum2.push(0);
-        } else {
-            if (arrNum1[i] === undefined) {
-                arrNum1.push(0);
-            }
-        }
-        arrNum3.push(arrNum1[i] + arrNum2[i]);
-    }
-    return arrNum3
-}
-getNewArrFromArraysElementsSum();
 
 //Напишите функцию compareNumbers(arr), которая возвращает массив, элементы которого отсортированы по убыванию их значений.
 function compareNumbersArray(arrInHere) {
@@ -205,15 +168,14 @@ function getSumAndProductOfArray() {
 }
 getSumAndProductOfArray();
 
-//Напишите функцию filterFalse(arr), 
-// которая очищает массив от ложных (false) значений: false, null, undefined, 0, –0, NaN и "" (пустя строка).
+//Напишите функцию , которая очищает массив от ложных (false) значений: false, null, undefined, 0, –0, NaN и "" (пустя строка).
 // НЕ РАБОТАЕТ NaN
 function filterFalse() {
     arrForFilter = [NaN, 0, 77, false, -17, '', undefined, 99, null];
     let FilteredArray = arrForFilter.filter(elem => elem !== false &&
         elem !== null &&
         elem !== undefined &&
-        elem !== NaN &&
+        elem !== NaN) &&
         elem !== '' &&
         elem !== 0 &&
         elem !== -0
@@ -322,7 +284,6 @@ schowNumberFromArray();
 
 // Напишите функцию generateNumbers(start, len), 
 // которая генерирует массив заданной длины len, заполненный целыми числами, где каждое число больше предыдущего на единицу.
-// НЕ ПОНЯТНО
 function generateNumbers(start, len) {
     let arrToGenerate = new Array(5);
     for (let i = 0; i < len; i++, start++) {
@@ -331,3 +292,14 @@ function generateNumbers(start, len) {
     return arrToGenerate;
 }
 generateNumbers(1, 5);
+
+// поменять местами
+let arrayToChange = ['a', 'b', 'c', 'd'];
+function change( oldArray, oldIndex , newIndex ){
+  return oldArray.map(( item , index, array )=>{
+    if( index === oldIndex ) return array[ newIndex ];
+    else if( index === newIndex ) return array[ oldIndex ];
+    else return item;
+  });
+}
+change( arrayToChange, 0, 1 );
